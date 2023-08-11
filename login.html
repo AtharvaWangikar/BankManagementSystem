@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Admin Login</title>
+    <style>
+      html {
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        color: #006600;
+        font-size: xx-large;
+        font-family: "Gill Sans", "Gill Sans MT", " Calibri", "Trebuchet MS",
+          "sans-serif";
+      }
+      form {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+        margin: 0 auto;
+        margin-right: 26%;
+        margin-top: 5%;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        background-color: #4caf50;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 15px;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+    <script>
+      function validateLogin() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (email === "admin@gmail.com" && password === "admin") {
+          alert("Login successful!");
+          window.location.href = "Customer.php";
+        } else {
+          alert("Invalid email or password. Please try again.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Habibi Bank Customer Admin</h1>
+    <form method="post" action="Customer.php">
+      <label>Username:</label>
+      <input type="text" id="email" name="username" /><br /><br />
+      <label>Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+      <input
+        type="submit"
+        name="submit"
+        value="Login"
+        onclick="validateLogin()"
+      />
+    </form>
+  </body>
+</html>
